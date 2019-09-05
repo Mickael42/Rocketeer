@@ -9,12 +9,13 @@ import HomeScreen from '../screens/HomeScreen';
 import Register from '../screens/Register';
 import ProductsList from '../screens/ProductsList';
 import Cart from '../screens/orderScreens/Cart'
+import Colors from '../constants/Colors'
 
 
 const CustomDrawerComponent = (props) => (
 
     < SafeAreaView style={{flex : 1}}>
-        <View style={{ alignItems: 'center', justifyContent: 'center', backgroundColor: 'blue' }}>
+        <View style={{ alignItems: 'center', justifyContent: 'center', backgroundColor: Colors.brandColor }}>
             <Image source={require('../assets/images/Rocketeer-logo.png')} style={{ height: 80, width: 250 }}></Image>
         </View>
         <ScrollView>

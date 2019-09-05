@@ -22,13 +22,15 @@ export default StyleSheet.create({
         backgroundColor: Colors.brandColor,
         marginBottom: 30,
         borderBottomEndRadius: 10,
-        borderTopStartRadius: 10,
+        borderTopStartRadius: 10, 
+        marginTop: 10
     },
     textButtonType1: {
         color: "white",
         fontSize: 20,
-        marginLeft: 40,
-        marginRight: 40,
+        marginLeft: 10,
+        marginRight: 10,
+       
     },
 
 

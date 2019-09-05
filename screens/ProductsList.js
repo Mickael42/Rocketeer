@@ -27,7 +27,6 @@ class ProductList extends Component {
         this.setState({
           products: getProducts,
         });
-        console.log(this.state.products)
 
       })
       .catch(error => {
@@ -59,20 +58,13 @@ class ProductList extends Component {
 
                   <TouchableOpacity
                     style={[styles.buttonType1, { alignSelf: 'center' }]}
-                    onPress={() => this.props.navigation.navigate('ProductSheet')}>
+                    onPress={() => this.props.navigation.navigate('ProductSheet',{ productSelected : product})}>
                     <Text style={[styles.textButtonType1, { fontSize: 12, marginTop: 10, marginBottom: 10 }]}>Buy my rocket now!</Text>
                   </TouchableOpacity>
                 </View>
               </View>
             )
           })}
-
-
-
-
-
-
-
         </View>
       </View>
     );

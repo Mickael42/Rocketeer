@@ -4,16 +4,32 @@ import * as Font from 'expo-font';
 import React, { useState } from 'react';
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { AsyncStorage } from 'react-native';
 
 import AppNavigator from './navigation/AppNavigator';
+import { getProducts } from './service/WooCommerce';
 
 export default function App(props) {
   const [isLoadingComplete, setLoadingComplete] = useState(false);
+  const [data, setData] = useState('');
+
+  const _getProducts = () => {
+    return (getProducts)
+      .then(getProducts => {
+        setData(getProducts)
+        /*       AsyncStorage.setItem("products",JSON.stringify(getProducts)); */
+
+      })
+      .catch((e) => {
+        console.log(e)
+      });
+  }
+
 
   if (!isLoadingComplete && !props.skipLoadingScreen) {
     return (
       <AppLoading
-        startAsync={loadResourcesAsync}
+        startAsync={_getProducts}
         onError={handleLoadingError}
         onFinish={() => handleFinishLoading(setLoadingComplete)}
       />
@@ -23,11 +39,14 @@ export default function App(props) {
       <View style={styles.container}>
         <StatusBar
           hidden={true} />
-        <AppNavigator />
+        <AppNavigator screenProps={data} />
       </View>
     );
   }
 }
+
+
+
 
 async function loadResourcesAsync() {
   await Promise.all([
@@ -43,9 +62,14 @@ async function loadResourcesAsync() {
       'space-mono': require('./assets/fonts/SpaceMono-Regular.ttf'),
       'space-mono-bold': require('./assets/fonts/SpaceMono-Bold.ttf'),
       'space-mono-italic': require('./assets/fonts/SpaceMono-RegularItalic.ttf'),
-    }),
+    })
+    ,
   ]);
 }
+
+
+
+
 
 function handleLoadingError(error) {
   // In this case, you might want to report the error to your error reporting

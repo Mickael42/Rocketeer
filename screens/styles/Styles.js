@@ -12,14 +12,17 @@ export default StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center'
     },
-    mainContainerActivityIndicator : {
+    mainContainerActivityIndicator: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor:'rgba(203, 205, 209, 0.7)'
+        backgroundColor: 'rgba(203, 205, 209, 0.7)'
     },
-
-
+    
+    logo: {
+        width: 300,
+        height: 80
+    },
     text: {
         color: Colors.brandColor,
         textAlign: 'center',
@@ -30,7 +33,7 @@ export default StyleSheet.create({
         backgroundColor: Colors.brandColor,
         marginBottom: 30,
         borderBottomEndRadius: 10,
-        borderTopStartRadius: 10, 
+        borderTopStartRadius: 10,
         marginTop: 10
     },
     textButtonType1: {
@@ -38,7 +41,7 @@ export default StyleSheet.create({
         fontSize: 20,
         marginLeft: 10,
         marginRight: 10,
-       
+
     },
 
 
@@ -119,7 +122,7 @@ export default StyleSheet.create({
     titleProductList: {
         color: Colors.brandColor,
         fontWeight: 'bold',
-        textAlign:'center',
+        textAlign: 'center',
         fontSize: 18,
         marginTop: 10,
         marginBottom: 10
@@ -128,43 +131,43 @@ export default StyleSheet.create({
         color: Colors.brandColor,
         marginRight: 20,
         marginLeft: 20,
-        marginTop:10,
-        borderColor : Colors.brandColor,
-        borderBottomWidth:2,
+        marginTop: 10,
+        borderColor: Colors.brandColor,
+        borderBottomWidth: 2,
     },
 
-    containerPicturesProduct:{
+    containerPicturesProduct: {
         flex: 1,
         justifyContent: 'center',
-        flexDirection:'row',
+        flexDirection: 'row',
     },
 
-    pictureActive:{
+    pictureActive: {
         flex: 8,
-        alignItems :'center',
-        borderColor : 'grey',
-        borderWidth : 0.5,
+        alignItems: 'center',
+        borderColor: 'grey',
+        borderWidth: 0.5,
         justifyContent: 'center',
     },
-    pictureList:{
+    pictureList: {
         flex: 2,
-        justifyContent : 'space-around',
-        alignItems :'center',
-        borderColor : 'grey',
-        borderWidth : 0.5
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        borderColor: 'grey',
+        borderWidth: 0.5
     },
 
-    containerFormShipping : {
-        flex : 1,
-        justifyContent : 'center',
-        alignItems : "center"
+    containerFormShipping: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: "center"
     },
 
 
-    mainContainerBlue : {
+    mainContainerBlue: {
         backgroundColor: Colors.brandColor,
-         margin: 20, 
-         flex: 1
+        margin: 20,
+        flex: 1
     }
 
 

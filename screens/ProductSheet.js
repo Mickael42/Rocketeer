@@ -13,7 +13,7 @@ class ProductSheet extends Component {
                 <View style={styles.mainContainer}>
                     <View style={styles.containerPicturesProduct}>
                         <View style={styles.pictureActive}>
-                            <Image style={{ width: 250, height: 250 }} source={{ uri: productSelected.images[0].src }} ></Image>
+                            <Image style={{ width: 100, height: 550 }} source={{ uri: productSelected.images[0].src }} ></Image>
                         </View>
                         <View style={styles.pictureList}>
                             <Image style={{ width: 50, height: 50 }} source={{ uri: productSelected.images[0].src }}></Image>
@@ -23,12 +23,16 @@ class ProductSheet extends Component {
                     </View>
                     <View style={styles.containerDescriptionProduct}>
                         <Text style={styles.titleProductList}>{productSelected.name}</Text>
-                        <Text style={styles.productSpecification}>Violence : Lorem Ipsum</Text>
-                        <Text style={styles.productSpecification}>Speed : Lorem Ipsum</Text>
-                        <Text style={styles.productSpecification}>Momentum : Lorem Ipsum</Text>
-                        <Text style={[styles.productSpecification, { marginBottom: 10 }]}>Power : Lorem Ipsum</Text>
-                        
-                        <HTML html={productSelected.description} baseFontStyle={styles.text} />
+                        <Text style={styles.productSpecification}>{productSelected.attributes[0].name} : {productSelected.attributes[0].options[0]}</Text>
+                        <Text style={styles.productSpecification}>{productSelected.attributes[1].name} : {productSelected.attributes[1].options[0]}</Text>
+                        <Text style={styles.productSpecification}>{productSelected.attributes[2].name} : {productSelected.attributes[2].options[0]}</Text>
+                        <Text style={styles.productSpecification}>Price : {productSelected.price} €</Text>
+
+
+
+                        <View style={{ marginLeft: 20, marginRight: 20 }}>
+                            <HTML html={productSelected.description} baseFontStyle={styles.text} />
+                        </View>
 
                         <TouchableOpacity
                             style={[styles.buttonType1, { alignSelf: 'center' }]}>

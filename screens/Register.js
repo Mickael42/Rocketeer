@@ -40,7 +40,8 @@ class Register extends Component {
                             style={styles.buttonType2}
                             onPress={this._signInAsync}>
                             <Text style={styles.textButtonType2}>Register</Text>
-                        </TouchableOpacity>
+                        </TouchableOpacity>                        
+
                     </View>
 
                 </View>

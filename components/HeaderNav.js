@@ -14,7 +14,6 @@ class HeaderNav extends Component {
                     style={styles.logo}
                     source={require('../assets/images/Rocketeer-logo.png')}
                 />
-
             </View>
         )
     }

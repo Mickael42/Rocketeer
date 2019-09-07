@@ -9,6 +9,7 @@ import HTML from 'react-native-render-html';
 import ProductSheet from "./ProductSheet";
 import HeaderDrawer from '../components/HeaderDrawer';
 import { getProducts } from '../service/WooCommerce';
+import Colors from '../constants/Colors'
 
 
 class ProductList extends Component {
@@ -58,7 +59,7 @@ class ProductList extends Component {
 
                   <TouchableOpacity
                     style={[styles.buttonType1, { alignSelf: 'center' }]}
-                    onPress={() => this.props.navigation.navigate('ProductSheet',{ productSelected : product})}>
+                    onPress={() => this.props.navigation.navigate('ProductSheet', { productSelected: product })}>
                     <Text style={[styles.textButtonType1, { fontSize: 12, marginTop: 10, marginBottom: 10 }]}>Buy my rocket now!</Text>
                   </TouchableOpacity>
                 </View>
@@ -78,7 +79,18 @@ const AppNavigator = createStackNavigator({
   ProductSheet: {
     screen: ProductSheet
   }
-},
+}, {
+    defaultNavigationOptions: {
+      headerStyle: {
+        backgroundColor: Colors.brandColor,
+      },
+      headerTintColor: '#fff',
+      headerTitle: <Image
+        style={styles.logo}
+        source={require('../assets/images/Rocketeer-logo.png')}
+      />
+    }
+  }
 
 );
 

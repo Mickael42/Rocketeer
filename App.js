@@ -17,7 +17,7 @@ export default function App(props) {
     return (getProducts)
       .then(getProducts => {
         setData(getProducts)
-        /*       AsyncStorage.setItem("products",JSON.stringify(getProducts)); */
+        AsyncStorage.setItem("products",JSON.stringify(getProducts));
 
       })
       .catch((e) => {

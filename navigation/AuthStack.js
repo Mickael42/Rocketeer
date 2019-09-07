@@ -6,7 +6,9 @@ import Colors from '../constants/Colors';
 
 const AuthStack = createStackNavigator(
   {
-    Login: Login,
+    Login: {
+      screen: Login
+    },
   },
 
   {

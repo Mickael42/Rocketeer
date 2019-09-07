@@ -28,7 +28,9 @@ const CustomDrawerComponent = (props) => (
 
 
 const AppDrawerNavigator = createDrawerNavigator({
-    Home: HomeScreen,
+    Home: {
+        screen: HomeScreen,
+    },
     Register: Register,
     ProductsList: ProductsList,
     Cart : Cart,

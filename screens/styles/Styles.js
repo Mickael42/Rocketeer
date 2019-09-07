@@ -12,6 +12,14 @@ export default StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center'
     },
+    mainContainerActivityIndicator : {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor:'rgba(203, 205, 209, 0.7)'
+    },
+
+
     text: {
         color: Colors.brandColor,
         textAlign: 'center',

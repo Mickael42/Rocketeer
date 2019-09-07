@@ -13,12 +13,12 @@ class ProductSheet extends Component {
                 <View style={styles.mainContainer}>
                     <View style={styles.containerPicturesProduct}>
                         <View style={styles.pictureActive}>
-                            <Image style={{ width: 100, height: 550 }} source={{ uri: productSelected.images[0].src }} ></Image>
+                            <Image  resizeMode="center" style={{ width: 100, height: 550 }} source={{ uri: productSelected.images[0].src }} ></Image>
                         </View>
                         <View style={styles.pictureList}>
-                            <Image style={{ width: 50, height: 50 }} source={{ uri: productSelected.images[0].src }}></Image>
-                            <Image style={{ width: 50, height: 50 }} source={{ uri: productSelected.images[0].src }}></Image>
-                            <Image style={{ width: 50, height: 50 }} source={{ uri: productSelected.images[0].src }}></Image>
+                            <Image  resizeMode="center" style={{ width: 50, height: 50 }} source={{ uri: productSelected.images[0].src }}></Image>
+                            <Image  resizeMode="center" style={{ width: 50, height: 50 }} source={{ uri: productSelected.images[0].src }}></Image>
+                            <Image  resizeMode="center" style={{ width: 50, height: 50 }} source={{ uri: productSelected.images[0].src }}></Image>
                         </View>
                     </View>
                     <View style={styles.containerDescriptionProduct}>

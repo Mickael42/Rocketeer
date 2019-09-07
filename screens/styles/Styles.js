@@ -103,6 +103,7 @@ export default StyleSheet.create({
         flexDirection: 'row',
         alignContent: 'stretch',
         flexWrap: 'wrap',
+        marginBottom : 30
 
     },
     containerProductPicture: {
@@ -111,8 +112,8 @@ export default StyleSheet.create({
 
     },
     imageProductList: {
-        width: 180,
-        height: 150,
+        width: 100,
+        height: 500,
         alignSelf: 'center',
     },
     containerProductText: {

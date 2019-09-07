@@ -1,6 +1,6 @@
 import React from 'react';
-import { createDrawerNavigator, SafeAreaView, DrawerItems, AsyncStorage } from 'react-navigation';
-import { Text, View, Image, Button } from 'react-native'
+import { createDrawerNavigator, SafeAreaView, DrawerItems } from 'react-navigation';
+import { View, Image,  } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler';
 
 
@@ -37,7 +37,7 @@ const AppDrawerNavigator = createDrawerNavigator({
     Register: Register,
     ProductsList: ProductsList,
     Cart: Cart,
-    Logout : LogOut
+    Logout : LogOut,
 
 }, {
         contentComponent: CustomDrawerComponent,

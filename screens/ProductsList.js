@@ -12,6 +12,7 @@ import { getProducts } from '../service/WooCommerce';
 import Colors from '../constants/Colors'
 
 
+
 class ProductList extends Component {
   static navigationOptions = {
     header: null
@@ -38,36 +39,44 @@ class ProductList extends Component {
 
   render() {
     return (
-      <View style={styles.mainContainer}>
-        <HeaderDrawer navigation={this.props.navigation}></HeaderDrawer>
+      <ScrollView>
+        <View style={styles.mainContainer}>
+          <HeaderDrawer navigation={this.props.navigation}></HeaderDrawer>
 
-        <View style={styles.containerProductsList}>
 
-          {this.state.products.map((product, i) => {
-            return (
 
-              <View style={styles.containerEachProduct} key={i}>
-                <View style={styles.containerProductPicture}>
-                  <Image style={styles.imageProductList} source={{ uri: product.images[0].src }}></Image>
+          <View style={styles.containerProductsList}>
+
+            {this.state.products.map((product, i) => {
+              return (
+
+                <View style={styles.containerEachProduct} key={i}>
+                  <View style={styles.containerProductPicture}>
+                    <Image 
+                    style={{width: '100%', height: "100%"}}
+                    resizeMode="center"
+                    source={{ uri: product.images[0].src }}></Image>
+                  </View>
+
+                  <View style={styles.containerProductText}>
+                    <Text style={styles.titleProductList}>{product.name}</Text>
+                    <ScrollView style={{ flex: 1 }}>
+                      <HTML html={product.description} imagesMaxWidth={Dimensions.get('window').width} />
+                    </ScrollView>
+
+                    <TouchableOpacity
+                      style={[styles.buttonType1, { alignSelf: 'center' }]}
+                      onPress={() => this.props.navigation.navigate('ProductSheet', { productSelected: product })}>
+                      <Text style={[styles.textButtonType1, { fontSize: 12, marginTop: 10, marginBottom: 10 }]}>Buy my rocket now!</Text>
+                    </TouchableOpacity>
+                  </View>
                 </View>
+              )
+            })}
+          </View>
 
-                <View style={styles.containerProductText}>
-                  <Text style={styles.titleProductList}>{product.name}</Text>
-                  <ScrollView style={{ flex: 1 }}>
-                    <HTML html={product.description} imagesMaxWidth={Dimensions.get('window').width} />
-                  </ScrollView>
-
-                  <TouchableOpacity
-                    style={[styles.buttonType1, { alignSelf: 'center' }]}
-                    onPress={() => this.props.navigation.navigate('ProductSheet', { productSelected: product })}>
-                    <Text style={[styles.textButtonType1, { fontSize: 12, marginTop: 10, marginBottom: 10 }]}>Buy my rocket now!</Text>
-                  </TouchableOpacity>
-                </View>
-              </View>
-            )
-          })}
         </View>
-      </View>
+      </ScrollView>
     );
   }
 }
@@ -78,7 +87,7 @@ const AppNavigator = createStackNavigator({
   },
   ProductSheet: {
     screen: ProductSheet
-  }
+  },
 }, {
     defaultNavigationOptions: {
       headerStyle: {

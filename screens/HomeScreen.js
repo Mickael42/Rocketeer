@@ -65,7 +65,7 @@ class HomeScreen extends Component {
       return (
         <ScrollView>
           <View style={styles.mainContainer}>
-            <HeaderDrawer navigation={this.props.navigation}></HeaderDrawer>
+            <HeaderDrawer navigation={this.props.navigation} routeName= {'Rocketeer'} ></HeaderDrawer>
 
             <Carousel
               ref={(c) => { this._carousel = c; }}

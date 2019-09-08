@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View, TouchableOpacity, AsyncStorage, ImageBackground, Alert } from 'react-native';
+import { Text, View, TouchableOpacity, AsyncStorage, KeyboardAvoidingView, ImageBackground, Alert } from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
 import styles from './styles/Styles'
 
@@ -19,7 +19,7 @@ class Login extends Component {
     const image = require('../assets/images/bg-img.jpeg');
     return (
       <ImageBackground source={image} style={{ width: '100%', height: '100%' }}>
-        <View style={styles.container}>
+        <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
           <View style={styles.formContainer}>
             <Text style={styles.labelInput}>User</Text>
             <TextInput
@@ -42,7 +42,7 @@ class Login extends Component {
             </TouchableOpacity>
           </View>
 
-        </View>
+        </KeyboardAvoidingView>
       </ImageBackground>
     );
   }

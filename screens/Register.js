@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View, TouchableOpacity, ImageBackground } from 'react-native';
+import { Text, View, TouchableOpacity, KeyboardAvoidingView, ImageBackground } from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
 import styles from './styles/Styles'
 import HeaderDrawer from '../components/HeaderDrawer';
@@ -13,8 +13,8 @@ class Register extends Component {
         const image = require('../assets/images/bg-img.jpeg');
         return (
             <ImageBackground source={image} style={{ width: '100%', height: '100%' }}>
-                 <HeaderDrawer navigation={this.props.navigation}></HeaderDrawer>
-                <View style={styles.container}>
+                 <HeaderDrawer navigation={this.props.navigation} routeName= {this.props.navigation.state.routeName}></HeaderDrawer>
+                <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
                     <View style={styles.formContainer}>
                         <Text style={styles.labelInput}>User</Text>
                         <TextInput
@@ -44,7 +44,7 @@ class Register extends Component {
 
                     </View>
 
-                </View>
+                </KeyboardAvoidingView>
             </ImageBackground>
         );
     }

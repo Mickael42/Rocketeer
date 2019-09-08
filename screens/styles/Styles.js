@@ -119,6 +119,8 @@ export default StyleSheet.create({
     containerProductText: {
         flex: 1,
         justifyContent: 'center',
+        marginRight : 20,
+
     },
     titleProductList: {
         color: Colors.brandColor,

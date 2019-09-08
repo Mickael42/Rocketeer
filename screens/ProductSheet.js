@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 import { Text, View, TouchableOpacity, Image } from 'react-native';
 import styles from './styles/Styles';
-import { ScrollView, Dimensions } from 'react-native';
+import { ScrollView } from 'react-native';
 import HTML from 'react-native-render-html';
 
 class ProductSheet extends Component {
+    
+    static navigationOptions = {
+          title: 'Rocket Specifications',
+    }
+
     render() {
         const { navigation } = this.props;
         const productSelected = navigation.getParam('productSelected');

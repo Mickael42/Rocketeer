@@ -35,7 +35,7 @@ const AppDrawerNavigator = createDrawerNavigator({
         screen: HomeScreen,
     },
     Register: Register,
-    ProductsList: ProductsList,
+    "Products List": ProductsList,
     Cart: Cart,
     Logout : LogOut,
 

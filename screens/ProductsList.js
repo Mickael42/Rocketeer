@@ -17,7 +17,6 @@ class ProductList extends Component {
   static navigationOptions = {
     header: null
   }
-
   state = {
     products: []
   }
@@ -41,9 +40,7 @@ class ProductList extends Component {
     return (
       <ScrollView>
         <View style={styles.mainContainer}>
-          <HeaderDrawer navigation={this.props.navigation}></HeaderDrawer>
-
-
+          <HeaderDrawer navigation={this.props.navigation} routeName= {'Our Rockets'}></HeaderDrawer> 
 
           <View style={styles.containerProductsList}>
 
@@ -52,22 +49,22 @@ class ProductList extends Component {
 
                 <View style={styles.containerEachProduct} key={i}>
                   <View style={styles.containerProductPicture}>
-                    <Image 
-                    style={{width: '100%', height: "100%"}}
-                    resizeMode="center"
-                    source={{ uri: product.images[0].src }}></Image>
+                    <Image
+                      style={{ width: '100%', height: "100%" }}
+                      resizeMode="center"
+                      source={{ uri: product.images[0].src }}></Image>
                   </View>
 
                   <View style={styles.containerProductText}>
                     <Text style={styles.titleProductList}>{product.name}</Text>
                     <ScrollView style={{ flex: 1 }}>
-                      <HTML html={product.description} imagesMaxWidth={Dimensions.get('window').width} />
+                      <HTML textSelectable={true} html={product.description} imagesMaxWidth={Dimensions.get('window').width} />
                     </ScrollView>
 
                     <TouchableOpacity
                       style={[styles.buttonType1, { alignSelf: 'center' }]}
                       onPress={() => this.props.navigation.navigate('ProductSheet', { productSelected: product })}>
-                      <Text style={[styles.textButtonType1, { fontSize: 12, marginTop: 10, marginBottom: 10 }]}>Buy my rocket now!</Text>
+                      <Text style={[styles.textButtonType1, { fontSize: 12, marginTop: 10, marginBottom: 10 }]}>View more</Text>
                     </TouchableOpacity>
                   </View>
                 </View>
@@ -82,7 +79,7 @@ class ProductList extends Component {
 }
 
 const AppNavigator = createStackNavigator({
-  ProductList: {
+  "Product List": {
     screen: ProductList
   },
   ProductSheet: {
@@ -92,12 +89,9 @@ const AppNavigator = createStackNavigator({
     defaultNavigationOptions: {
       headerStyle: {
         backgroundColor: Colors.brandColor,
+
       },
       headerTintColor: '#fff',
-      headerTitle: <Image
-        style={styles.logo}
-        source={require('../assets/images/Rocketeer-logo.png')}
-      />
     }
   }
 

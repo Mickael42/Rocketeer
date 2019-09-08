@@ -9,7 +9,7 @@ class HeaderDrawer extends Component {
     render() {
         return (
             <Header style={{ backgroundColor: Colors.brandColor, justifyContent: 'center', alignItems:'center' }}>
-                <Text style={{ color: 'white', flex: 9, textAlign:'center', fontSize:27 }}>Rocketeer</Text>
+                <Text style={{ color: 'white', flex: 9, textAlign:'center', fontSize:27 }}>{this.props.routeName}</Text>
                 <Icon name='menu' style={{ color: 'white', flex: 1 }} onPress={() => this.props.navigation.openDrawer()}></Icon>
 
             </Header>
